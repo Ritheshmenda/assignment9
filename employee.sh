@@ -24,6 +24,7 @@ echo $emphrs
 }
 function dwcal
 {
+local employees=$1
 wage=$(($emphrs*$empwageperhr))
 echo $wage
 }
@@ -36,3 +37,5 @@ empdailywage[$mindays]="$( dwcal $emphrs)"
 done
 totalsalary="$( dwcal $totalemphrs )"
 echo "daily wage" ${empdailywage[@]}
+echo "all keys" ${!empdailywage[@]}
+
