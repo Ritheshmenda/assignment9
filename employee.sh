@@ -1,16 +1,18 @@
 #!/bin/bash -x
 echo "employee wage computation program on master branch"
+#!/bin/bash -x
+echo "employee wage computation program on master branch"
 ispartime=1
 isfulltime=2
 empwageprhr=20
-ft_hours=10
+maxhrs=100
 days=20
-minhr=0
+minhrs=0
 mindays=0
-while [[ $minhrs -lt $ft_hours && $mindays -lt $days ]]
+emp=$((RANDOM%3))
+while [[ $minhrs -lt $maxhrs && $mindays -lt $days ]]
 do
 ((mindays++))
-emp=$((RANDOM%3))
 case $emp in
  $isfulltime)
  emphrs=8
