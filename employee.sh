@@ -1,16 +1,28 @@
+#!/bin/bash -x
 echo "employee wage computation program on master branch"
-empwage=20
-ft=10
-pt=8
+ispartime=1
+isfulltime=2
+empwageprhr=20
+ft_hours=10
 days=20
+minhr=0
+mindays=0
+while [[ $minhrs -lt $ft_hours && $mindays -lt $days ]]
+do
+((mindays++))
 emp=$((RANDOM%3))
-case "$emp" in
-1) (( wage = ($empwage*$ft) * $days ))
-echo "fulltime wage is $wage"
+case $emp in
+ $isfulltime)
+ emphrs=8
 ;;
-2) (( wage = ($empwage*$pt) * $days ))
-echo "parttime wage is $wage"
+ $ispartime)
+ emphrs=6
 ;;
-*) echo "absent"
+*)
+ emphrs=0
 ;;
 esac
+minhrs=$(($minhrs+$emphrs))
+done
+totalsalary=$(($minhrs*$empwageprhr))
+
