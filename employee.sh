@@ -1,7 +1,5 @@
 #!/bin/bash -x
 echo "employee wage computation program on master branch"
-#!/bin/bash -x
-echo "employee wage computation program on master branch"
 ispartime=1
 isfulltime=2
 empwageprhr=20
